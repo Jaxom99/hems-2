@@ -1,3 +1,5 @@
-FROM eclipse-mosquitto
+FROM eclipse-mosquitto:2.1.2-alpine
 
-COPY mosquitto.conf /mosquitto/config
+RUN apk add --no-cache gettext-envsubst
+COPY mosquitto.conf.template /mosquitto/config
+COPY --chmod=555 ./docker-entrypoint.sh /

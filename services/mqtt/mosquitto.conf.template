@@ -1,0 +1,13 @@
+listener 1883
+allow_anonymous true
+persistence true
+persistence_location /mosquitto/data/
+
+connection projet-elfe
+address mqtt.projet-elfe.fr
+topic cmnd/# both 0 "" cofybox/$COFYBOX_ID/
+topic hasp/# both 0 "" cofybox/$COFYBOX_ID/
+topic shelly/# both 0 "" cofybox/$COFYBOX_ID/
+topic stat/# both 0 "" cofybox/$COFYBOX_ID/
+topic tele/# both 0 "" cofybox/$COFYBOX_ID/
+topic xky/# both 0 "" cofybox/$COFYBOX_ID/
