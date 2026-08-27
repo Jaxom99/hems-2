@@ -4,7 +4,12 @@ persistence true
 persistence_location /mosquitto/data/
 
 connection projet-elfe
-address mqtt.projet-elfe.fr
+address mqtt.projet-elfe.fr:8883
+remote_clientid $MOSQUITTO_REMOTE_CLIENTID
+remote_username $MOSQUITTO_REMOTE_USERNAME
+remote_password $MOSQUITTO_REMOTE_PASSWORD
+bridge_cafile /mosquitto/config/ca.crt
+bridge_tls_version tlsv1.3
 topic cmnd/# both 0 "" cofybox/$COFYBOX_ID/
 topic hasp/# both 0 "" cofybox/$COFYBOX_ID/
 topic shelly/# both 0 "" cofybox/$COFYBOX_ID/
